@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">TodoListApp</string>
+    <string name="done">Done</string>
+    <string name="ok">Ok</string>
+    <string name="todo_enter">Rejalarni kiriting</string>
+    <string name="cancel">Cancel</string>
+
+    <array name="todo_indc">
+        <item>Pending</item>
+        <item>Done</item>
+    </array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
+
