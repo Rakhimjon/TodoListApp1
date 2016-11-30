@@ -18,6 +18,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -100,8 +101,6 @@ public class PendingFragment extends Fragment {
             }
 
         });
-
-
     }
 
     private void addTodoItem(String toDoitemText) {
@@ -117,13 +116,17 @@ public class PendingFragment extends Fragment {
     }
 
     public class TodoPendingAdapter extends RecyclerView.Adapter<TodoPendingAdapter.ViewHolder> {
+        View view = null;
         private Context context = getActivity();
 
         @Override
         public TodoPendingAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(context).inflate(R.layout.fragment_pending, parent, false);
+            if (viewType == Constants.FIRST_ROW)
+                view = LayoutInflater.from(context).inflate(R.layout.fragment_pending, parent, false);
+            else if (viewType==Constants.OTHER_ROW)
+                view=LayoutInflater.from(context).inflate(R.layout.high_item,parent,false);
 
-            return new TodoPendingAdapter.ViewHolder(view);
+            return new TodoPendingAdapter.ViewHolder(view, viewType);
         }
 
         @Override
@@ -132,7 +135,7 @@ public class PendingFragment extends Fragment {
             holder.done_btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                   // int position1 = recyclerView.getChildPosition(view);
+                    // int position1 = recyclerView.getChildPosition(view);
                     MainActivity activity = (MainActivity) getActivity();
                     System.out.println("send " + pending.get(position));
                     activity.addDoneText(pending.remove(position));
@@ -147,17 +150,25 @@ public class PendingFragment extends Fragment {
             return pending.size();
         }
 
+        @Override
+        public int getItemViewType(int position) {
+
+
+            return super.getItemViewType(position);
+        }
 
         public class ViewHolder extends RecyclerView.ViewHolder {
             TextView pending_text;
 
             ImageView done_btn;
 
-            public ViewHolder(View itemView) {
+            public ViewHolder(View itemView, int viewType) {
                 super(itemView);
                 pending_text = (TextView) itemView.findViewById(R.id.pending_text);
                 done_btn = (ImageView) itemView.findViewById(R.id.done_btn);
             }
+
+
         }
     }
 
