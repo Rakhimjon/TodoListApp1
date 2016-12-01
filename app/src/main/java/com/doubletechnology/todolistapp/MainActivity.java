@@ -45,11 +45,10 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(new TodoAdapter());
         tabLayout.setupWithViewPager(viewPager);
 
-
     }
 
-    public void addDoneText(String s){
-        doneFragment.addString(s);
+    public void addDoneText(PendingItem pendingItem){
+        doneFragment.addString(pendingItem);
 
     }
 
@@ -62,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public Fragment getItem(int position) {
             if (position==0){
-
                 return pendingFragment;
             }else {
                 return doneFragment;

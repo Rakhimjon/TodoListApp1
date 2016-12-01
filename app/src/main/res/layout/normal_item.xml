@@ -4,12 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <TextView
-        android:id="@+id/high"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="@dimen/activity_horizontal_margin"
         android:textSize="18sp"
-        android:background="@color/colorHigh"
+        android:background="@color/colorNorm"
+        android:id="@+id/norm"
         />
 
 </LinearLayout>

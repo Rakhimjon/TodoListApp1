@@ -25,5 +25,19 @@
         android:padding="@dimen/activity_horizontal_margin"
         android:textSize="18sp"/>
 
+        <ImageView
+            android:id="@+id/del_btn"
+            android:layout_width="49dp"
+            android:layout_height="38dp"
+            android:layout_alignEnd="@+id/pending_text"
+            android:layout_alignRight="@+id/pending_text"
+            android:layout_gravity="top|right"
+            android:layout_margin="4dp"
+            android:clickable="false"
+            android:paddingBottom="4dp"
+            android:src="@drawable/ic_delete_forever_black_24dp"
+            android:text="@string/done"
+
+            />
     </android.support.v7.widget.CardView>
 </LinearLayout>

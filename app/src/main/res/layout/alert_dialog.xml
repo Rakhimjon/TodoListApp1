@@ -14,4 +14,38 @@
         android:inputType="textCapWords"
         android:singleLine="true" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/rgAlert"
+            >
+
+            <RadioButton
+                android:id="@+id/highBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="High" />
+
+            <RadioButton
+                android:id="@+id/normBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Normal" />
+
+            <RadioButton
+                android:id="@+id/lowBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Low" />
+
+        </RadioGroup>
+
+    </LinearLayout>
+
 </LinearLayout>
